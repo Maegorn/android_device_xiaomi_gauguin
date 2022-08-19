@@ -442,7 +442,8 @@ PRODUCT_PACKAGES += \
 
 # Shims
 PRODUCT_PACKAGES += \
-    lib-weakcountshim
+    lib-weakcountshim \
+    libwatermark_shim
 
 # Telephony
 PRODUCT_PACKAGES += \
