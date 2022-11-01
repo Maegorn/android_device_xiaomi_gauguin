@@ -13,14 +13,17 @@
 
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
-    <!-- Defines the location of the fingerprint sensor on the device
-         0 = back
-         1 = front
-         2 = left side
-         3 = right side
-    -->
-    <integer name="config_fingerprintSensorLocation">3</integer>
+          <!-- Defines the location of the fingerprint sensor on the device
+          0 = back
+          1 = front
+          2 = left side
+          3 = right side
+     -->
+     <integer name="config_fingerprintSensorLocation">3</integer>
 
-    <!-- Whether to show a preference item for mobile plan -->
-    <bool name="config_show_mobile_plan">false</bool>
+     <!-- Whether to show a preference item for mobile plan -->
+     <bool name="config_show_mobile_plan">false</bool>
+
+     <string name="maintainer_name">Molyuu 摸鱼</string>
+     <string name="maintainer_telegram">https://t.me/molyuu_group</string>
 </resources>
