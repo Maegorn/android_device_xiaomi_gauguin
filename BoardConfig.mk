@@ -46,6 +46,7 @@ TARGET_KERNEL_ADDITIONAL_FLAGS := DTC_EXT=$(shell pwd)/prebuilts/misc/$(HOST_OS)
 TARGET_KERNEL_CLANG_COMPILE := true
 TARGET_KERNEL_SOURCE := kernel/xiaomi/gauguin
 TARGET_KERNEL_CONFIG := vendor/gauguin_user_defconfig
+TARGET_KERNEL_CLANG_VERSION := crepuscular
 
 # Audio
 AUDIO_FEATURE_ENABLED_EXTENDED_COMPRESS_FORMAT := true
