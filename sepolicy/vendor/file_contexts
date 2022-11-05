@@ -34,19 +34,11 @@
 /dev/goodix_fp                                                          u:object_r:fingerprint_device:s0
 
 # Fingerprint - data
-<<<<<<< HEAD
-/data/gf_data(/.*)?                                                     u:object_r:fingerprint_data_file:s0
 /data/vendor/goodix(/.*)?                                               u:object_r:fingerprint_data_file:s0
 /data/vendor/fpc(/.*)?                                                  u:object_r:fingerprint_data_file:s0
 /data/vendor/fpdump(/.*)?                                               u:object_r:fingerprint_data_file:s0
-=======
-/data/vendor/fpc(/.*)?                                                  u:object_r:vendor_fingerprint_data_file:s0
-/data/vendor/fpdump(/.*)?                                               u:object_r:vendor_fingerprint_data_file:s0
-/data/vendor/gf_data(/.*)?                                              u:object_r:vendor_fingerprint_data_file:s0
-/data/vendor/goodix(/.*)?                                               u:object_r:vendor_fingerprint_data_file:s0
-/mnt/vendor/persist/fpc(/.*)?                                           u:object_r:vendor_fingerprint_data_file:s0
-/mnt/vendor/persist/goodix(/.*)?                                        u:object_r:vendor_fingerprint_data_file:s0
->>>>>>> 8c5dcb6... sm8250-common: Sepolicy: fingerprint_data_file -> vendor_fingerprint_data_file
+/mnt/vendor/persist/fpc(/.*)?                               u:object_r:fingerprint_data_file:s0
+/mnt/vendor/persist/goodix(/.*)?                            u:object_r:fingerprint_data_file:s0
 
 # Firmware
 /bt_firmware(/.*)?                                          u:object_r:bt_firmware_file:s0
@@ -72,7 +64,7 @@
 /vendor/bin/hw/android\.hardware\.light@2\.0-service\.xiaomi_gauguin                                    u:object_r:hal_light_default_exec:s0
 
 # Mlipay
-/vendor/bin/mlipayd@1\.1                                                u:object_r:hal_mlipay_default_exec:s0
+/(vendor|system/vendor)/bin/mlipayd@1.1                                                u:object_r:hal_mlipay_default_exec:s0
 
 # Persist subsystem
 /mnt/vendor/persist/subsys(/.*)?                                        u:object_r:persist_subsys_file:s0
@@ -86,7 +78,7 @@
 
 # Thermal
 /vendor/bin/mi_thermald                                                 u:object_r:mi_thermald_exec:s0
-/data/vendor/thermal(/.*)?                                              u:object_r:thermal_data_file:s0
+/data/vendor/thermal(/.*)?                                              u:object_r:vendor_thermal_data_file:s0
 
 # USB
 /vendor/bin/init\.mi\.usb\.sh                                           u:object_r:vendor_qti_init_shell_exec:s0
@@ -98,11 +90,5 @@
 /vendor/bin/nv_mac                                                      u:object_r:vendor_wcnss_service_exec:s0
 /data/vendor/mac_addr(/.*)?                                             u:object_r:vendor_wifi_vendor_data_file:s0
 
-# Sys files (health)
-/sys/devices/platform/soc/c440000\.qcom\,spmi/spmi-0/spmi0-02/c440000\.qcom\,spmi\:qcom\,pm7250b\@2\:qpnp\,qg/power_supply/(?!.*wakeup\d+).*                                      u:object_r:vendor_sysfs_battery_supply:s0
-
 # Sys files (wakeup)
-/sys/devices(/platform)?/soc/(soc:gpio_keys|a600000.ssusb|soc:gpio_keys|18800000.qcom,icnss|88e0000.qcom,msm-eud)/wakeup/wakeup[0-9]+(/.*)? u:object_r:sysfs_wakeup:s0
-/sys/devices/virtual/diag/diag/wakeup[0-9]+(/.*)? u:object_r:sysfs_wakeup:s0
-/sys/devices/virtual/misc/(msm_wma|msm_amrwb|msm_ape|msm_aac|msm_alac|msm_g711mlaw|msm_qcelp|msm_multi_aac|msm_g711alaw|msm_evrc|msm_mp3|msm_wmapro|msm_amrnb|msm_amrwbplus)/wakeup[0-9]+(/.*)? u:object_r:sysfs_wakeup:s0
 /sys/devices/virtual/wakeup/wakeup[0-9]+(/.*)? u:object_r:sysfs_wakeup:s0
